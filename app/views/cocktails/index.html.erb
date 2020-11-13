@@ -1,24 +1,24 @@
-<div style="background-attachment: url();">
-<h1>Cocktail and Dreams ...</h1>
+<div class="container">
+  <h1>Cocktail and Dreams ...</h1>
 
-<div class = "banner">
-  <% @cocktail.each do |cocktail| %>
-  <div>
-    <%= link_to "#{cocktail.name}", cocktail_path(cocktail) %>
+  <div class = "banner">
+    <% @cocktail.each do |cocktail| %>
+    <div>
+      <%= link_to "#{cocktail.name}", cocktail_path(cocktail) %>
+    </div>
+      <% end %>
   </div>
-    <% end %>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <%= link_to "Create new Cocktail", new_cocktail_path  %>
+
+  <%= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605283003/opsd40c3jwipzdsvi2fh.jpg",
+        width: 400, height: 300, crop: :fill) %>
+
+  <!-- for face detection -->
+  <%= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605283035/wpbmspfvntlrmkohieoq.jpg",
+        width: 150, height: 150, crop: :thumb, gravity: :face) %>
 </div>
-
-<br>
-<br>
-<br>
-<br>
-<%= link_to "Create new Cocktail", new_cocktail_path  %>
-</div>
-
-<%= cl_image_tag("THE_IMAGE_ID_FROM_LIBRARY",
-      width: 400, height: 300, crop: :fill) %>
-
-<!-- for face detection -->
-<%= cl_image_tag("IMAGE_WITH_FACE_ID",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
