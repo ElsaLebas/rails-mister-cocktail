@@ -11,7 +11,7 @@ class DosesController < ApplicationController
     @dose.cocktail = @cocktail
     if @dose.save
       # redirect_to cocktail_path(@cocktail), notice: "ok create"
-      redirect_to cocktails_path
+      redirect_to root_path
     else
       # render :new
       # "something went wrong"
