@@ -1,23 +1,28 @@
-<div class="image-container">
+<div class="tom-container home">
   <!-- <h1>Cocktail and Dreams ...</h1> -->
-  <div class="d-flex align-item-center">
 
-    <div id="image">
-      <%#= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605289078/gufotxpwqllczdfjappk.jpg",
-        width: 400, height: 300, crop: :fill) %>
-         <%= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605289078/gufotxpwqllczdfjappk.jpg")%>
-    </div>
+  <div id="tom">
+    <%#= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605289078/gufotxpwqllczdfjappk.jpg",
+      width: 400, height: 300, crop: :fill) %>
+    <%= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605289078/gufotxpwqllczdfjappk.jpg")%>
+  </div>
 
-    <div>
-      <% @cocktail.each do |cocktail| %>
-      <div>
+  <div class = "cards">
+    <% @cocktail.each do |cocktail| %>
+      <div class = "card">
         <%= link_to "#{cocktail.name}", cocktail_path(cocktail) %>
       </div>
-        <%= link_to "Create new Cocktail", new_cocktail_path  %>
-        <% end %>
+    <% end %>
+
+    <div class="card">
+     <%= link_to "Create new Cocktail", new_cocktail_path  %>
     </div>
+
   </div>
 </div>
+
+
+
 
   <%#= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605283003/opsd40c3jwipzdsvi2fh.jpg",
         width: 400, height: 300, crop: :fill) %>
