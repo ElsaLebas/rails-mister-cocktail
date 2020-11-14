@@ -1,28 +1,30 @@
-<div class="container">
-  <h1>Cocktail and Dreams ...</h1>
+<div class="image-container">
+  <!-- <h1>Cocktail and Dreams ...</h1> -->
+  <div class="d-flex align-item-center">
 
-  <div class = "banner">
-    <% @cocktail.each do |cocktail| %>
-    <div>
-      <%= link_to "#{cocktail.name}", cocktail_path(cocktail) %>
+    <div id="image">
+      <%#= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605289078/gufotxpwqllczdfjappk.jpg",
+        width: 400, height: 300, crop: :fill) %>
+         <%= cl_image_tag("gufotxpwqllczdfjappk.jpg")%>
     </div>
-      <% end %>
+
+    <div>
+      <% @cocktail.each do |cocktail| %>
+      <div>
+        <%= link_to "#{cocktail.name}", cocktail_path(cocktail) %>
+      </div>
+        <%= link_to "Create new Cocktail", new_cocktail_path  %>
+        <% end %>
+    </div>
   </div>
+</div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <%= link_to "Create new Cocktail", new_cocktail_path  %>
-
-  <%= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605283003/opsd40c3jwipzdsvi2fh.jpg",
+  <%#= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605283003/opsd40c3jwipzdsvi2fh.jpg",
         width: 400, height: 300, crop: :fill) %>
 
   <!-- for face detection -->
-  <%= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605283035/wpbmspfvntlrmkohieoq.jpg",
+  <%#= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605283035/wpbmspfvntlrmkohieoq.jpg",
         width: 150, height: 150, crop: :thumb, gravity: :face) %>
 
 
-    <%= cl_image_tag("https://res.cloudinary.com/dt6fxz4qi/image/upload/v1605289078/gufotxpwqllczdfjappk.jpg",
-        width: 400, height: 300, crop: :fill) %>
-</div>
+
